@@ -151,7 +151,7 @@ export class GameWorld{
     gameLoop() {
         setTimeout( () => {
             this.gameLoop();
-        }, 50);
+        }, 100);
 
         for (let i = 0; i < this.allGrids.length; i++) {
             this.allGrids[i].showState();
