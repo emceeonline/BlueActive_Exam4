@@ -22,33 +22,94 @@ export class GameWorld{
             }
         }
         
-        let randomNumbersArray:Array<number> = [];
+        let seedNumbers:Array<number> = [];
         let randomNumber:number;
 
         //generate random initial alive seeds
         /*
-        while(randomNumbersArray.length < this.initialSeedCount){
+        while(seedNumbers.length < this.initialSeedCount){
             randomNumber = Math.floor(Math.random() * ((this.allGrids.length - 1) - 0 + 1)) + 0;
-            if(randomNumbersArray.indexOf(randomNumber) == -1){
-                randomNumbersArray.push(randomNumber);
+            if(seedNumbers.indexOf(randomNumber) == -1){
+                seedNumbers.push(randomNumber);
             }
         }
         */
 
+        /*
         //fixed middle seeds
         let a:number = 4839;
         let b:number = 4939;
-        //while(randomNumbersArray.length < this.initialSeedCount){
-        while(randomNumbersArray.length < this.initialSeedCount){
-            randomNumbersArray.push(a);
-            randomNumbersArray.push(b);
+        //while(seedNumbers.length < this.initialSeedCount){
+        while(seedNumbers.length < this.initialSeedCount){
+            seedNumbers.push(a);
+            seedNumbers.push(b);
             a++;
             b++;
         }
+        */
+
+        //missile
+        seedNumbers.push(926);
+        seedNumbers.push(927);
+        seedNumbers.push(1026);
+        seedNumbers.push(1027);
+
+        seedNumbers.push(760);
+        seedNumbers.push(761);
+        seedNumbers.push(860);
+        seedNumbers.push(861);
+
+        seedNumbers.push(1043);
+        seedNumbers.push(1042);
+        seedNumbers.push(942);
+        seedNumbers.push(841);
+        seedNumbers.push(739);
+        seedNumbers.push(738);
+        seedNumbers.push(837);
+        seedNumbers.push(936);
+        seedNumbers.push(1036);
+        seedNumbers.push(1136);
+        seedNumbers.push(1237);
+        seedNumbers.push(1338);
+        seedNumbers.push(1339);
+        seedNumbers.push(1040);
+        seedNumbers.push(1241);
+        seedNumbers.push(1142);
+
+        seedNumbers.push(550);
+        seedNumbers.push(650);
+        seedNumbers.push(648);
+        seedNumbers.push(746);
+        seedNumbers.push(846);
+        seedNumbers.push(946);
+        seedNumbers.push(947);
+        seedNumbers.push(847);
+        seedNumbers.push(747);
+        seedNumbers.push(1048);
+        seedNumbers.push(1050);
+        seedNumbers.push(1150);
+
+        seedNumbers.push(5090);
+        seedNumbers.push(5191);
+        seedNumbers.push(5190);
+        seedNumbers.push(6191);
+
+
+        seedNumbers.push(5949);
+        seedNumbers.push(6049);
+        seedNumbers.push(6149);
+        seedNumbers.push(6249);
+        seedNumbers.push(6349);
+        seedNumbers.push(6449);
+        seedNumbers.push(6549);
+        seedNumbers.push(6649);
+        seedNumbers.push(6749);
+        seedNumbers.push(6849);
+
 
         //revive initial seeds Count
-        for (let i:number = 0; i < randomNumbersArray.length; i++) {
-            this.allGrids[randomNumbersArray[i]].isAlive = true;
+        for (let i:number = 0; i < seedNumbers.length; i++) {
+            this.allGrids[seedNumbers[i]].isAlive = true;
         }
         this.gameLoop();
     }
@@ -90,7 +151,7 @@ export class GameWorld{
     gameLoop() {
         setTimeout( () => {
             this.gameLoop();
-        }, 500);
+        }, 50);
 
         for (let i = 0; i < this.allGrids.length; i++) {
             this.allGrids[i].showState();
